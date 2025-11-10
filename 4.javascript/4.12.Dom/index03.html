@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        body {
+            @apply h-screen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="flex h-full">
+        <div class="js-sidebar w-[220px] bg-gray-200 h-full relative group">
+            <h2>Navigation</h2>
+            <div
+                class="js-resize w-[5px] absolute top-0 left-0 right-0 bottom-[20px] bg-[gray] z-50 cursor-ew-resize opacity-0 group-hover:text-opacity-100 transition-all">
+            </div>
+        </div>
+        <div class="flex-1">
+            <h1>Content</h1>
+        </div>
+    </main>
+    <script src="./js/script04.js"></script>
+</body>
+
+</html>

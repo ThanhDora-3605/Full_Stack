@@ -1,0 +1,77 @@
+/* #title {
+  color: red;
+}
+.sub-title {
+  color: green;
+}
+p {
+  color: violet;
+} */
+
+/* * {
+  color: rgb(255, 0, 13);
+} */
+
+/* .box {
+  color: rgb(255, 0, 13);
+}
+
+.content {
+  color: rgb(0, 255, 8);
+}
+
+.element {
+  color: rgb(0, 0, 255);
+} */
+
+/* .box > h2 {
+  color: violet;
+}
+
+.box > div > h2 {
+  color: red;
+} */
+
+/* .title {
+  color: red;
+}
+
+h3.sub-title {
+  color: violet;
+} */
+
+/* .products .title.title-large {
+  color: red;
+}
+.prost .title.title-large {
+  color: violet;
+}
+
+.products .title {
+  color: green;
+} */
+
+/* .box h2,
+.content {
+  color: violet;
+} */
+/* 
+p ~ h2 {
+  color: red;
+}
+
+p ~ div h2 {
+  color: violet;
+} */
+
+/* h2 + h2 {
+  color: violet;
+} */
+
+/* a[target="_blank"] {
+  color: violet;
+} */
+
+/* a[title$="123"] {
+  color: red;
+} */

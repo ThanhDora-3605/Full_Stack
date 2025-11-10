@@ -1,0 +1,16 @@
+h2::before {
+  content: "👉 ";
+}
+li::after {
+  content: " ✔️";
+}
+p::first-letter {
+  font-size: 40px;
+  color: red;
+}
+p::first-line {
+  background-color: yellow;
+}
+p::selection {
+  background-color: green;
+}

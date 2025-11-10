@@ -1,0 +1,17 @@
+a:hover {
+  color: orange;
+}
+
+button:active {
+  background-color: green;
+}
+ul li:first-child {
+  color: blue;
+}
+
+ol li:last-child {
+  color: red;
+}
+li:nth-child(odd) {
+  background-color: gray;
+}

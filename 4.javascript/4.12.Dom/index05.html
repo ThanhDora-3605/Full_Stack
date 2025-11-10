@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dropdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.open {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-8">
+    <div class="bg-white rounded-lg w-64 shadow-lg">
+        <ul class="menu p-0 m-0">
+            <!-- Menu 1 - Simple item -->
+            <li class="menu-item bg-gray-800 text-white px-4 py-3 cursor-pointer hover:bg-gray-700">
+                <span>Menu 1</span>
+            </li>
+
+            <!-- Menu 2 - With submenu -->
+            <li class="menu-item bg-gray-800 text-white px-4 py-3 cursor-pointer hover:bg-gray-700">
+                <div class="flex justify-between items-center">
+                    <span>Menu 2</span>
+                    <span class="arrow text-white text-xs">▼</span>
+                </div>
+                <ul class="submenu hidden bg-gray-900 mt-1 -mx-4">
+                    <li class="px-4 py-2 hover:bg-gray-800">Submenu 2.1</li>
+                    <li class="px-4 py-2 hover:bg-gray-800">Submenu 2.2</li>
+                </ul>
+            </li>
+
+            <!-- Menu 3 - Simple item -->
+            <li class="menu-item bg-gray-800 text-white px-4 py-3 cursor-pointer hover:bg-gray-700">
+                <span>Menu 3</span>
+            </li>
+
+            <!-- Menu 4 - With submenu -->
+            <li class="menu-item bg-gray-800 text-white px-4 py-3 cursor-pointer hover:bg-gray-700">
+                <div class="flex justify-between items-center">
+                    <span>Menu 4</span>
+                    <span class="arrow text-white text-xs">▼</span>
+                </div>
+                <ul class="submenu hidden bg-gray-900 mt-1 -mx-4">
+                    <li class="px-4 py-2 hover:bg-gray-800">Submenu 4.1</li>
+                    <li class="px-4 py-2 hover:bg-gray-800">Submenu 4.2</li>
+                    <li class="px-4 py-2 hover:bg-gray-800">Submenu 4.3</li>
+                </ul>
+            </li>
+
+            <!-- Menu 5 - Simple item -->
+            <li class="menu-item bg-gray-800 text-white px-4 py-3 cursor-pointer hover:bg-gray-700">
+                <span>Menu 5</span>
+            </li>
+        </ul>
+    </div>
+
+    <script src="./js/script06.js"></script>
+</body>
+
+</html>

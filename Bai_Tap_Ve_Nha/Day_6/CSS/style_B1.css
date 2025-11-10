@@ -1,0 +1,31 @@
+html {
+  font-size: 62.5%;
+  font-family: Arial, sans-serif;
+  background-color: #fef7ef;
+  text-align: center;
+}
+table {
+  margin: 1rem auto;
+  border-collapse: collapse;
+  width: 35rem;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #954e0e;
+}
+td {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #e1c195;
+}
+td:last-child {
+  text-align: right;
+  font-weight: bold;
+  color: #8f4901;
+}
+tr:hover {
+  background-color: rgba(255, 228, 196, 0.419);
+  transform: translateY(-2px);
+}

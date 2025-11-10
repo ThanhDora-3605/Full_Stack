@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        hr {
+            border: 1px solid black;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="font-serif m-5 text-2xl font-bold">DANH SÁCH SẢN PHẨM</h3>
+    <table class="w-[99%] border-collapse border-1 mx-auto" id="productTable">
+        <thead>
+            <tr>
+                <th class="w-[5%]">STT</th>
+                <th>Tên sản phẩm</th>
+                <th class="w-[10%]">Giá</th>
+                <th class="w-[10%]">Thêm vào giỏ</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <h3 class="font-serif m-5 text-2xl font-bold">GIỎ HÀNG</h3>
+    <div class="font-serif m-5" id="cartData">Giỏ hàng không có sản phẩm</div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

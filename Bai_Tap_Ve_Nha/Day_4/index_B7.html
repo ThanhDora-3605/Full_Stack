@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7: Đăng ký</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <form action="">
+            <table border="3" width="50px" cellpadding="10" cellspacing="1">
+                <tr>
+                    <th colspan="2">
+                        ĐĂNG KÝ
+                    </th>
+                </tr>
+                <!-- fullname -->
+                <tr>
+                    <td>
+                        <label for="fullname">Full name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="fullname" id="fullname" size="55">
+                    </td>
+                </tr>
+                <!-- usename -->
+                <tr>
+                    <td>
+                        <label for="usename">Username</label>
+                    </td>
+                    <td>
+                        <input type="text" name="usename" id="usename" size="55">
+                    </td>
+                </tr>
+                <!-- password -->
+                <tr>
+                    <td>
+                        <label for="pass">Password</label>
+                    </td>
+                    <td>
+                        <input type="password" name="pass" id="pass" size="55">
+                    </td>
+                </tr>
+                <!-- Enter the password again -->
+                <tr>
+                    <td>
+                        <label for="confirmPassword">Nhập lại <br> Password</label>
+                    </td>
+                    <td>
+                        <input type="password" name="confirmPassword" id="confirmPassword" size="55">
+                    </td>
+                </tr>
+                <!-- gender -->
+                <tr>
+                    <td>
+                        <label for="gender">Giới tính</label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="gender" value="male">
+                            Nam
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            Nữ
+                        </label>
+                    </td>
+                </tr>
+                <!-- date of birth -->
+                <tr>
+                    <td>
+                        <label for="dob">Ngày sinh</label>
+                    </td>
+                    <td>
+                        <input type="date" name="dob" id="dob">
+                    </td>
+                </tr>
+                <!-- Address -->
+                <tr>
+                    <td>
+                        <label for="address">Địa chỉ</label>
+                    </td>
+                    <td>
+                        <textarea name="address" id="address"></textarea>
+                    </td>
+                </tr>
+                <!-- avatar -->
+                <tr>
+                    <td>
+                        <label for="avatar">Avatar</label>
+                    </td>
+                    <td>
+                        <input type="file" name="avatar" id="avatar">
+                    </td>
+                </tr>
+                <!-- hobbies -->
+                <tr>
+                    <td>
+                        <label>Sở thích</label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="hobbies" id="Movies">
+                            Xem Phim
+                        </label>
+                        <label>
+                            <input type="checkbox" name="hobbies" id="sports">
+                            Thể Thao
+                        </label>
+                        <label>
+                            <input type="checkbox" name="hobbies" id="web">
+                            Web
+                        </label>
+                    </td>
+                </tr>
+                <!-- button -->
+                <tr>
+                    <th colspan="2">
+                        <button type="reset">Reset</button>
+                        <button type="submit">OK</button>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </main>
+</body>
+
+</html>

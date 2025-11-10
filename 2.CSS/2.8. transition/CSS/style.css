@@ -1,0 +1,12 @@
+.box {
+  border: 1px solid black;
+}
+.box h1 {
+  transition-duration: padding-left;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 0.78, 0.96, -0.12);
+}
+.box h1:hover {
+  padding-left: 150px;
+  /* transition-delay: 1s; */
+}

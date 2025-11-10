@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5: Form liên hệ nhiều bước</title>
+</head>
+
+<body>
+    <header>
+        <h1>Bài 5: Form liên hệ nhiều bước</h1>
+    </header>
+    <main>
+        <form action="">
+            <div>
+                <fieldset style="width: 30%;">
+                    <legend>Thông tin cá nhân</legend>
+                    <div>
+                        <label for="name">họ tên:</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="Email">Email:</label>
+                        <input type="email" name="Email" id="Email">
+                    </div>
+                    <div>
+                        <label for="Phone">Số điện thoại:</label>
+                        <input type="tel" name="Phone" id="Phone">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div>
+                <fieldset style="width: 30%;">
+                    <legend>Thông tin yêu cầu</legend>
+                    <div>
+                        <label for="request">Loại yêu cầu:</label>
+                        <select name="request" id="request">
+                            <option value="0">Hỗ trợ kỹ thuật</option>
+                            <option value="1">Hỗ trợ Phần mềm</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="messenge">Mô tả:</label>
+                    </div>
+                    <div>
+                        <textarea name="messenge" id="messenge"></textarea>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <div>
+                <fieldset style="width: 30%;">
+                    <legend>Thông tin bổ sung</legend>
+                    <div>
+                        <label for="receive">
+                            <input type="checkbox" name="receive" id="receive">
+                            Nhận email khuyến mãi
+                        </label>
+                    </div>
+                    <div>
+                        <label for="">Cách liên hệ:</label>
+                        <label for="email">
+                            <input type="radio" name="Contact" id="email">
+                            Email
+                        </label>
+                        <label for="phone">
+                            <input type="radio" name="Contact" id="phone">
+                            Điện thoại
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit">Gửi thông tin</button>
+        </form>
+    </main>
+</body>
+
+</html>

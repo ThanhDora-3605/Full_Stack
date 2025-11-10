@@ -1,0 +1,14 @@
+body {
+  height: 100vh;
+  /* margin: 0; */
+  /* background-color: violet; */
+  background-image: url(../images/nen.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 600px;
+  background-attachment: fixed;
+}
+
+/* .box {
+  background-color: rgba(238, 130, 238, 0.526);
+} */

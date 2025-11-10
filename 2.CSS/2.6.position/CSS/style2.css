@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.modal {
+  display: none;
+}
+#modal-toggle:checked + .modal {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.modal .model-dialog {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 15px;
+}
+.modal .model-dialog .modal-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+.modal .model-dialog .modal-body {
+  padding: 15px 0;
+}
+.modal .modal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 99;
+  background: #0000007e;
+}
+.modal-toggle {
+  cursor: pointer;
+}

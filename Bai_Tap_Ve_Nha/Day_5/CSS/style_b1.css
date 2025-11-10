@@ -1,0 +1,15 @@
+h1 {
+  color: red;
+}
+.highlight {
+  color: blue;
+}
+#special {
+  text-decoration: underline;
+}
+.box p {
+  background-color: yellow;
+}
+ul li {
+  border: 2px solid black;
+}

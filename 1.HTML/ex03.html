@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 3</title>
+</head>
+
+<body>
+  <form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="post">
+    <div>
+      <label for="usename">Họ và tên</label>
+      <input type="text" id="usename" name="fullname" placeholder="Tên...." />
+    </div>
+
+    <div>
+      <label for="eemail">Email</label>
+      <input type="email" id="eemail" name="email" placeholder="Email...." />
+    </div>
+
+    <div>
+      <label for="lbl-age">Tuổi</label>
+      <input type="number" id="lbl-age" name="age" placeholder="Tuổi...." />
+    </div>
+
+    <div>
+      <label for="lbl-date">date</label>
+      <input type="date" id="lbl-date" name="date" placeholder="SN...." />
+    </div>
+
+    <div>
+      <label for="lbl-avt">File</label>
+      <input type="file" id="lbl-avt" name="avt" placeholder="File...." />
+    </div>
+
+    <div>
+      <label for="">Giới Tính</label>
+      <label>
+        <input type="radio" name="gender" value="unknowwn" />
+        không biết
+      </label>
+      <label>
+        <input type="radio" name="gender" value="male" />
+        nam
+      </label>
+      <label>
+        <input type="radio" name="gender" value="femele" />
+        Nữ
+      </label>
+    </div>
+
+    <div>
+      <label>Sở Thích</label>
+      <label>
+        <input type="checkbox" name="name" value="name">
+      </label>
+    </div>
+
+    <div>
+      <label for="province">Tỉnh/Thành Phố</label>
+      <select name="province" id="province">
+        <option value="0"> Tỉnh/Thành Phố</option>
+        <option value="1">Bắc Ninh</option>
+        <option value="2">Hà Nội</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="mes">Tin nhắn</label>
+      <textarea name="mess" id="mes" placeholder="Nhập"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+    <button type="button">Button</button>
+    <button type="reset">reset</button>
+  </form>
+</body>
+
+</html>

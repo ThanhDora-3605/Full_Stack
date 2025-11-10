@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style_B1.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="landing">
+        <div class="landing-decoration">
+
+        </div>
+        <!-- End Landing Decoration -->
+        <div class="landing-info">
+            <div class="logo">
+                <img class="logo-img" src="./images/image-vikinger-logo.png" alt="logo">
+            </div>
+            <!-- End Logo -->
+            <h2 class="landing-info-pretitle">Welcome to</h2>
+            <h1 class="landing-info-title">Vikinger</h1>
+            <p class="landing-info-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta eius suscipit quo, reiciendis blanditiis
+                minus quod quos ipsum cumque ab fugiat rerum commodi molestias obcaecati labore sapiente accusantium
+                corrupti! Qui!
+            </p>
+            <div class="tab-switch">
+                <label class="tab-switch-button login-register-form-trigger active">Login</label>
+                <label class="tab-switch-button login-register-form-trigger">Register</label>
+            </div>
+            <!-- End Tab Switch -->
+        </div>
+        <!-- End Landing Info -->
+        <div class="landing-form">
+            <div class="form-box login-register-form-element show">
+                <img class="form-box-decoration overflowing" src="./images/rocket.webp" alt="background-image">
+                <h2 class="form-box-title">Account Login</h2>
+                <!--Form Login-->
+                <form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="post">
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="form-input">
+                                <input type="text" id="username" name="username" required>
+                                <label for="username">Username or Email</label>
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="form-input">
+                                <input type="text" id="username" name="username" required>
+                                <label for="username">Password</label>
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                    <div class="form-row space-between">
+                        <div class="form-item">
+                            <div class="checkbox-wrap">
+                                <input type="checkbox" id="remember" name="remember" hidden>
+                                <div class="checkbox-box">
+                                    <label for="remember">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </label>
+                                </div>
+                                <label for="remember" class="checkbox-label">Remember me</label>
+                            </div>
+                            <!-- End Checkbox Wrap -->
+                        </div>
+                        <!-- End Form Item -->
+                        <div class="form-item">
+                            <a href="#" class="form-link">Forgot Password?</a>
+                            <!-- End Form Link -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row Space Between -->
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="form-input">
+                                <button class="button medium secondary" type="submit">Login to your Account!</button>
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                </form>
+                <!-- End Form -->
+                <p class="lined-text">Login with your Social Account</p>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link twitter icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link google icon">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="#" class="social-link linkedin icon">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+                <!-- End Social Links -->
+            </div>
+            <!-- End Landing Form -->
+            <div class="form-box login-create-form-element login-register-form-element hide">
+                <img src="./images/rocket.webp" alt="background-image" class="form-box-decoration">
+                <h2 class="form-box-title">Create your Account!</h2>
+                <!--Form Register-->
+                <form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="post">
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="form-input">
+                                <input type="text" id="register-mail" name="register-mail" required>
+                                <label for="register-mail">Your Email</label>
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="form-input">
+                                <input type="text" id="register-username" name="register-username" required>
+                                <label for="register-username">Username</label>
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="form-input">
+                                <input type="text" id="register-password" name="register-password" required>
+                                <label for="register-password">Password</label>
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="form-input">
+                                <input type="text" id="register-password-repeat" name="register-password-repeat"
+                                    required>
+                                <label for="register-password-repeat">Repeat Password</label>
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                    <div class="form-row">
+                        <div class="form-item">
+                            <div class="checkbox-wrap">
+                                <input type="checkbox" id="register-terms" name="register-terms" hidden>
+                                <div class="checkbox-box">
+                                    <label for="register-terms">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </label>
+                                </div>
+                                <label for="register-terms" class="checkbox-label">Send me news and updates via
+                                    email</label>
+                                <!-- End Checkbox Wrap -->
+                            </div>
+                            <!-- End Form Input -->
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                    <div class="form-row">
+                        <div class="form-item">
+                            <button class="button medium provident" type="submit">Register Now!</button>
+                        </div>
+                        <!-- End Form Item -->
+                    </div>
+                    <!-- End Form Row -->
+                </form>
+                <!-- End Form -->
+                <p class="form-text">You'll receive a confirmation email in your inbox with a link to activate your
+                    account.
+                    If you have any problems, <a href="#">contact us</a>!</p>
+            </div>
+            <!-- End Form Box -->
+        </div>
+
+    </div>
+    <!-- End Landing -->
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabButtons = document.querySelectorAll('.tab-switch-button');
+            const loginForm = document.querySelector('.form-box.login-register-form-element:first-of-type');
+            const registerForm = document.querySelector('.form-box.login-register-form-element:last-of-type');
+            const landingForm = document.querySelector('.landing-form');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Remove all animation classes
+                    landingForm.classList.remove('login-active', 'register-active');
+
+                    if (this.textContent.trim() === 'Login') {
+                        // Login clicked - show login form
+                        landingForm.classList.add('login-active');
+
+                        // Show login form
+                        loginForm.style.display = 'block';
+                        registerForm.style.display = 'none';
+                    } else if (this.textContent.trim() === 'Register') {
+                        // Register clicked - show register form
+                        landingForm.classList.add('register-active');
+
+                        // Show register form
+                        loginForm.style.display = 'none';
+                        registerForm.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

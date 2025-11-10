@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modal HTML + CSS</title>
+    <link rel="stylesheet" href="CSS/style2.css">
+</head>
+
+<body>
+    <h1>F8 - Học lập trình để đi làm</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laboriosam, modi distinctio repudiandae
+        aspernatur omnis…</p>
+    <button><label class="modal-toggle" for="modal-toggle">Open Modal</label></button>
+
+    <input type="checkbox" id="modal-toggle" hidden>
+    <div class="modal">
+        <div class="model-dialog">
+            <div class="modal-header">
+                <h3>Modal Title</h3>
+                <label for="modal-toggle" class="modal-close">&times;</label>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laboriosam, modi distinctio
+                    repudiandae
+                    aspernatur omnis…</p>
+            </div>
+        </div>
+        <label for="modal-toggle" class="modal-overlay"></label>
+    </div>
+</body>
+
+</html>

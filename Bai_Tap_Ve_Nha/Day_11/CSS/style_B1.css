@@ -1,0 +1,874 @@
+/* ===========================================
+   RESET & BASE STYLES
+   =========================================== */
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 62.5%;
+}
+
+/* ===========================================
+   LANDING PAGE LAYOUT
+   =========================================== */
+.landing {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../images/landing-background.jpg);
+  background-size: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow-y: auto;
+}
+
+/* Landing decoration */
+.landing .landing-decoration {
+  width: 64%;
+  height: 140%;
+  background: aliceblue url(../images/dot-texture.png);
+  position: absolute;
+  top: -20%;
+  right: -32%;
+  pointer-events: none;
+  border-top-left-radius: 60% 100%;
+  border-bottom-left-radius: 60% 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+/* ===========================================
+   LANDING INFO SECTION
+   =========================================== */
+.landing .landing-info {
+  width: 584px;
+  margin-top: 12%;
+  position: relative;
+  top: 16%;
+  left: 13%;
+}
+
+.landing .landing-info .logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.landing .landing-info .logo .logo-img {
+  fill: #fff;
+  width: 42px;
+  height: 42px;
+}
+
+.landing-info .landing-info-pretitle {
+  margin-top: 36px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.landing-info .landing-info-title {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.landing-info .landing-info-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
+/* ===========================================
+   TAB SWITCH BUTTONS
+   =========================================== */
+.landing-info .tab-switch {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.landing .landing-info .tab-switch .tab-switch-button {
+  width: 180px;
+  height: 54px;
+  border: 1px solid #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 54px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-switch .tab-switch-button:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-right: none;
+}
+
+.tab-switch .tab-switch-button:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Tab button states */
+.tab-switch .tab-switch-button.active {
+  color: #3e3f5e;
+  background-color: #fff;
+  cursor: auto;
+  z-index: 2;
+}
+
+.tab-switch .tab-switch-button:not(.active) {
+  color: #fff;
+  background-color: transparent;
+}
+
+.tab-switch .tab-switch-button:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.tab-switch .tab-switch-button:active {
+  transform: scale(0.98);
+}
+
+/* ===========================================
+   FORM CONTAINER & ANIMATIONS
+   =========================================== */
+.landing .landing-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 484px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  transition: right 0.6s ease-in-out;
+}
+
+/* Form animation states */
+.landing .landing-form.login-active {
+  right: 15%;
+  animation: slideInFromRight 0.6s ease-in-out;
+}
+
+.landing .landing-form.register-active {
+  right: 15%;
+  animation: slideInFromLeft 0.6s ease-in-out;
+}
+
+/* ===========================================
+   KEYFRAME ANIMATIONS
+   =========================================== */
+@keyframes slideInFromRight {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 15%;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 15%;
+  }
+}
+
+@keyframes slideOutToRight {
+  0% {
+    right: 15%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    right: 15%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+/* ===========================================
+   FORM CONTAINER
+   =========================================== */
+.landing .form-box {
+  width: 484px;
+  height: auto;
+  padding: 64px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 0 60px 0 rgba(94, 92, 154, 0.12);
+  position: relative;
+}
+
+/* Form decoration */
+.form-box .form-box-decoration {
+  position: absolute;
+  top: 14px;
+  left: -80px;
+}
+
+.form-box .form-box-decoration.overflowing {
+  top: -68px;
+}
+
+/* Form elements visibility */
+.landing .form-box .login-register-form-element {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  position: absolute;
+  left: 0px;
+  transition: all 0.6s ease-in-out;
+  display: block;
+}
+
+.landing .form-box .login-register-form-element.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide {
+  display: none;
+}
+
+/* ===========================================
+   FORM CONTENT
+   =========================================== */
+.form-box .form-box-title {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 5.5rem;
+}
+
+.form-box .form {
+  margin-top: 7.6rem;
+}
+
+.form,
+.form-row,
+.form-item {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.form-row + .form-row {
+  margin-top: 1.5rem;
+}
+
+.form-row.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-row.space-between .form-item {
+  width: auto;
+}
+
+/* ===========================================
+   FORM INPUTS
+   =========================================== */
+.form-input {
+  position: relative;
+}
+
+.form-input input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #3e3f5e3e;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  color: #3e3f5e;
+}
+
+.form-input input:hover,
+.form-input input:focus,
+.form-input input:valid {
+  border-color: #e879f9;
+  background: linear-gradient(90deg, #8b5cf6, #e879f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-input label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #3e3f5e3e;
+  background: white;
+  padding: 0 4px;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.form-input input:is(:focus, :valid) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  color: #e879f9;
+}
+/* ===========================================
+   CHECKBOX & FORM CONTROLS
+   =========================================== */
+.checkbox-wrap {
+  position: relative;
+}
+
+.checkbox-wrap .checkbox-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #3e3f5e3e;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-wrap input[type="checkbox"]:checked + .checkbox-box {
+  background-color: #23d2e2;
+  border-color: #23d2e2;
+}
+
+.checkbox-wrap input[type="checkbox"]:checked + .checkbox-box .fa-xmark {
+  display: flex;
+  transform: scale(1.4);
+}
+
+.checkbox-wrap .checkbox-box .icon-cross {
+  fill: transparent;
+  transition: all 0.3s ease;
+}
+
+.checkbox-wrap input[type="checkbox"]:checked + .checkbox-box .icon-cross {
+  fill: #fff;
+}
+
+.checkbox-wrap label {
+  padding-left: 34px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #3e3f5e;
+}
+
+.form-link {
+  color: #adafca;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.form-link:hover {
+  color: #615dfa;
+}
+/* ===========================================
+   BUTTONS
+   =========================================== */
+.button.secondary {
+  background-color: #615dfa;
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+}
+
+.button.medium {
+  height: 54px;
+  line-height: 54px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  width: 100%;
+  opacity: 1;
+}
+
+.button.medium:hover,
+.button.medium:focus {
+  transform: translateY(-2px);
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+  background-color: #4dbad2;
+  opacity: 0.8;
+}
+
+.button.medium:active {
+  transform: translateY(0);
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+}
+
+/* ===========================================
+   DIVIDERS & TEXT
+   =========================================== */
+.form-box .lined-text {
+  margin-top: 2rem;
+}
+
+.lined-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lined-text::before,
+.lined-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15%;
+  height: 0.1px;
+  background-color: #adafca;
+}
+
+.lined-text::before {
+  left: 0;
+}
+
+.lined-text::after {
+  right: 0;
+}
+
+.form-box .form-text,
+.form-box .social-links {
+  margin-top: 3rem;
+}
+
+/* ===========================================
+   SOCIAL MEDIA LINKS
+   =========================================== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  flex-wrap: wrap;
+}
+
+.social-link.facebook {
+  background-color: #3b5998;
+}
+
+.social-link.twitter {
+  background-color: #1da1f2;
+}
+
+.social-link.google {
+  background-color: #dd4b39;
+}
+
+.social-link.linkedin {
+  background-color: #0077b5;
+}
+
+.icon {
+  padding: 12px;
+  border-radius: 25%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+  background-color: #615dfa;
+  opacity: 0.8;
+}
+
+.fa-brands {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+/* ===========================================
+   UTILITY CLASSES & ICONS
+   =========================================== */
+.login-create-form-element .form-box-decoration {
+  top: -68px;
+}
+
+.fa-xmark {
+  color: #ffffff;
+  font-size: 1rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 0rem;
+  right: 1.1rem;
+  cursor: pointer;
+}
+
+.checkbox-label::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #3e3f5e3e;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-label {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.form-row .provident {
+  background-color: #23d2e2;
+  border-color: #23d2e2;
+}
+
+/* ===========================================
+   FORM TEXT & LINKS
+   =========================================== */
+.form-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  color: #3e3f5e;
+}
+
+.form-text a {
+  color: #4dbad2;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.form-text a:hover {
+  color: #615dfa;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+/* ===========================================
+   ICON STYLES
+   =========================================== */
+.icon-artstation,
+.icon-behance,
+.icon-cross,
+.icon-deviantart,
+.icon-discord,
+.icon-dribbble,
+.icon-facebook,
+.icon-google,
+.icon-instagram,
+.icon-patreon,
+.icon-twitch,
+.icon-twitter,
+.icon-youtube {
+  fill: #fff;
+  width: 12px;
+  height: 12px;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+/* Large Desktop (1800px and down) */
+@media (max-width: 1799.98px) {
+  .landing .landing-info {
+    width: 520px;
+    left: 6%;
+    top: 18%;
+  }
+
+  .landing .landing-form {
+    width: 450px;
+    right: 8%;
+  }
+
+  .landing .form-box {
+    width: 450px;
+    padding: 50px;
+  }
+
+  .landing-info .landing-info-title {
+    font-size: 5.5rem;
+  }
+
+  .landing-info .landing-info-pretitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Desktop (1750px and down) */
+@media (max-width: 1749.98px) {
+  .landing .landing-info {
+    width: 450px;
+    position: relative;
+    left: 4%;
+    top: 18%;
+    left: 20%;
+  }
+
+  .landing .landing-form {
+    transform: translateX(5%);
+    width: 400px;
+    right: 4%;
+  }
+
+  .landing .landing-decoration {
+    display: none;
+  }
+  .landing .form-box {
+    width: 400px;
+    padding: 45px;
+  }
+}
+
+/* Tablet (1500px and down) */
+@media (max-width: 1499.98px) {
+  .landing {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .landing .landing-info {
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 50px 30px 30px;
+    text-align: center;
+    position: relative;
+  }
+
+  .landing .landing-info .landing-info-text {
+    display: none;
+  }
+
+  .landing .landing-form {
+    position: relative;
+    width: 100%;
+    right: 0;
+    top: 0;
+    left: -5%;
+    padding: 30px;
+    height: auto;
+  }
+  .landing .form-box-decoration {
+    display: none;
+  }
+
+  .landing .form-box {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 45px 35px;
+  }
+
+  .landing-info .landing-info-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .landing-info .landing-info-pretitle {
+    font-size: 1.3rem;
+    margin-top: 25px;
+  }
+
+  .landing-info .landing-info-text {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .tab-switch .tab-switch-button {
+    width: 170px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 1rem;
+  }
+
+  .form-box .form-box-title {
+    font-size: 1.7rem;
+    margin-bottom: 4rem;
+  }
+
+  .form-box .form {
+    margin-top: 6rem;
+  }
+}
+
+/* Mobile (768px and down) */
+@media (max-width: 767.98px) {
+  .landing {
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 20px 0;
+  }
+
+  .landing .landing-info {
+    width: 100%;
+    padding: 30px 20px 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .landing .landing-info .landing-info-text {
+    display: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .landing .landing-form {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .landing .form-box {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 30px 20px;
+  }
+
+  .landing-info .landing-info-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .landing-info .landing-info-pretitle {
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
+  .tab-switch .tab-switch-button {
+    width: 140px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 0.9rem;
+  }
+
+  .form-box .form-box-title {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .form-box .form {
+    margin-top: 4rem;
+  }
+
+  .form-input input {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .form-input label {
+    font-size: 0.9rem;
+  }
+
+  .button.medium {
+    height: 48px;
+    line-height: 48px;
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: 0.8rem;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,60 @@
+/* h2::before {
+  content: "A";
+}
+h2::after {
+  content: "B";
+}
+
+p::first-letter {
+  color: red;
+}
+
+p::first-line {
+  color: violet;
+}
+
+p::selection {
+  background: black;
+  color: violet;
+}
+
+input::placeholder {
+  color: violet;
+} */
+
+/* h2:hover {
+  color: red;
+}
+
+h2:active {
+  color: violet;
+}
+input:focus {
+  background: rgb(255, 196, 255);
+}
+input:focus::placeholder {
+  color: red;
+}
+input:hover::placeholder {
+  color: violet;
+}
+button:focus {
+  background: red;
+  color: yellow;
+}
+p:focus {
+  color: violet;
+} */
+/* input:not(input [type="email"]):not(input[type="number"]) {
+  background: yellow;
+} */
+
+/* .check-item:checked + span {
+  color: red;
+} */
+
+input:disabled {
+  border-color: rgb(255, 0, 0);
+  color: aliceblue;
+  background: gray;
+}

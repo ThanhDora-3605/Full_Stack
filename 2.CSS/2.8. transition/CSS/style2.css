@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: -250px;
+  bottom: 0;
+  background: #333;
+  color: #fff;
+  padding: 15px;
+  transition: left 0.3s;
+  z-index: 1;
+}
+.menu .menu-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.menu .menu-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+#toggle-menu:checked + .menu {
+  left: 0;
+}
+.overlay label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#toggle-menu:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+/* Lớp phủ overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.overlay label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#toggle-menu:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}

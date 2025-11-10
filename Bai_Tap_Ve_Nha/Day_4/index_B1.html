@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 1: Form đăng ký tài khoản</title>
+</head>
+
+<body>
+  <header>
+    <h1>Form đăng ký tài khoản</h1>
+  </header>
+  <main>
+    <form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="post">
+      <div>
+        <label for="username">Họ Tên:</label>
+        <input type="text" id="username" name="username">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+      </div>
+      <div>
+        <label for="password">Mật Khẩu:</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <div>
+        <label for="birth">Ngày sinh:</label>
+        <input type="date" name="birth" id="birth">
+      </div>
+      <div>
+        <label for="">Giới tính:</label>
+        <label>
+          <input type="radio" name="gender" id="mele">Nam
+        </label>
+        <label>
+          <input type="radio" name="gender" id="femele">Nữ
+        </label>
+        <label>
+          <input type="radio" name="gender" id="other">Khác
+        </label>
+      </div>
+      <div>
+        <label>Sở thích:</label>
+        <label>
+          <input type="checkbox" name="Readbooks" id="Readbooks">
+          Đọc sách
+        </label>
+        <label>
+          <input type="checkbox" name="Travel" id="Travel">
+          Du lịch
+        </label>
+        <label>
+          <input type="checkbox" name="Sports" id="Sports">
+          Thể thao
+        </label>
+      </div>
+
+      <div>
+        <label for="messenge">Mô tả bản thân</label>
+      </div>
+      <div>
+        <textarea name="messenge" id="messenge"></textarea>
+      </div>
+
+      <button type="submit">Đăng ký</button>
+      <button type="reset">Xoá</button>
+    </form>
+  </main>
+</body>
+
+</html>

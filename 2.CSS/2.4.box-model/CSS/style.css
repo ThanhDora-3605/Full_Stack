@@ -1,0 +1,21 @@
+.box {
+  width: 200px;
+  height: 200px;
+  border: 5px solid;
+  border-color: red green blueviolet yellow;
+  padding: 20px;
+  margin: auto;
+  box-sizing: border-box;
+}
+.content {
+  min-width: 200px;
+  max-width: 100%;
+  width: 150px;
+  height: 50%;
+  background: red;
+}
+span {
+  border: 5px solid red;
+  padding: 15px 0;
+  display: inline-block;
+}

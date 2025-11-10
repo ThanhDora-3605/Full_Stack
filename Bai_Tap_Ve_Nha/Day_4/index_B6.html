@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6: Service Login</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <form action="">
+            <table border="0" cellspacing="0" cellpadding="5">
+                <tr>
+                    <th colspan="2">
+                        <h1>Novell Services Login</h1>
+                    </th>
+                </tr>
+                <!-- username -->
+                <tr>
+                    <td>
+                        <label for="name">Username:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="name" id="name" size="40">
+                    </td>
+                </tr>
+                <!-- passwrd -->
+                <tr>
+                    <td>
+                        <label for="pass">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="pass" id="pass" size="40">
+                    </td>
+                </tr>
+                <!-- City of Employment -->
+                <tr>
+                    <td>
+                        <label for="City">City of <br> Employment:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="City" id="City" size="40">
+                    </td>
+                </tr>
+                <!-- Web server -->
+                <tr>
+                    <td>
+                        <label for="server">Web server:</label>
+                    </td>
+                    <td>
+                        <select name="server" id="server">
+                            <option value="0">— Choose a server —</option>
+                            <option value="1">Choose a server 1</option>
+                            <option value="2">Choose a server 2</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Please specify your role -->
+                <tr>
+                    <td>
+                        <label for="">Please specify <br> your role:</label>
+                    </td>
+                    <td>
+                        <div>
+                            <label>
+                                <input type="radio" name="role" value="admin">
+                                Admin
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="role" value="engineer">
+                                Engineer
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="role" value="manager">
+                                Manager
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="role" value="guest">
+                                Guest
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Single Sign-on to the following -->
+                <tr>
+                    <td>
+                        <label>Single Sign-on <br>to the following:</label>
+                    </td>
+                    <td>
+                        <div>
+                            <label>
+                                <input type="checkbox" name="single" value="mail">
+                                Mail
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" name="single" value="Payroll">
+                                Payroll
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" name="single" value="Self-service">
+                                Self-service
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <!-- button -->
+                <tr>
+                    <th colspan="2">
+                        <button type="submit">Login</button>
+                        <button type="reset">Reset</button>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </main>
+</body>
+
+</html>

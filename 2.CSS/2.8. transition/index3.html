@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Click me</button>
+
+    <div class="toggle-switch">
+        <input type="checkbox" id="toggle" class="toggle-input">
+        <label for="toggle" class="toggle-label"></label>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('toggle');
+        const body = document.body;
+
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                body.style.backgroundColor = '#2c3e50';
+            } else {
+                body.style.backgroundColor = '#f0f0f0';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.input-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.field {
+  position: relative;
+}
+
+.field input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.field input:hover {
+  border-color: #f0d9ff;
+  background: linear-gradient(90deg, #8b5cf6, #e879f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.field input:focus {
+  border-color: #e879f9;
+  background: linear-gradient(90deg, #8b5cf6, #e879f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.field input:valid {
+  border-color: #e879f9;
+  background: linear-gradient(90deg, #8b5cf6, #e879f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.field label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #333;
+  background: white;
+  padding: 0 4px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.field input:is(:hover, :focus, :valid) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  color: #e879f9;
+}

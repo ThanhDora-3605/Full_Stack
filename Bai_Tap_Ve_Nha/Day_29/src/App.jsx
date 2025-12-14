@@ -13,6 +13,12 @@ export default function App() {
   const [postLoading, setPostLoading] = useState(false);
   const [postError, setPostError] = useState(null);
   const [currentPostId, setCurrentPostId] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [limit] = useState(10);
+  const [sortOrder, setSortOrder] = useState("newest");
   const truncateText = (text, maxLength = 150) => {
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength) + "...";
@@ -23,8 +29,24 @@ export default function App() {
       try {
         setLoading(true);
         setError(null);
-        const response = await instance.get("/posts");
-        setPosts(response.data.posts);
+        const skip = (currentPage - 1) * limit;
+        let url = searchQuery
+          ? `/posts/search?q=${encodeURIComponent(
+              searchQuery
+            )}&skip=${skip}&limit=${limit}`
+          : `/posts?skip=${skip}&limit=${limit}`;
+        const response = await instance.get(url);
+        let fetchedPosts = response.data.posts || [];
+        fetchedPosts = fetchedPosts.sort((a, b) => {
+          if (sortOrder === "newest") {
+            return b.id - a.id;
+          } else {
+            return a.id - b.id;
+          }
+        });
+        setPosts(fetchedPosts);
+        const total = response.data.total || fetchedPosts.length || 0;
+        setTotalPages(Math.ceil(total / limit));
       } catch (error) {
         setError(
           error.response?.data?.message ||
@@ -36,7 +58,22 @@ export default function App() {
       }
     };
     getPosts();
-  }, []);
+  }, [searchQuery, currentPage, limit, sortOrder]);
+
+  useEffect(() => {
+    if (searchInput.trim() === "") {
+      setSearchQuery("");
+      setCurrentPage(1);
+      return;
+    }
+    const timer = setTimeout(() => {
+      if (searchInput.trim() !== "") {
+        setSearchQuery(searchInput.trim());
+        setCurrentPage(1);
+      }
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [searchInput]);
 
   const handleViewDetail = async (id) => {
     setCurrentPostId(id);
@@ -93,27 +130,70 @@ export default function App() {
       handleCloseModal();
     }
   };
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const query = searchInput.trim();
+      setSearchQuery(query);
+      setCurrentPage(1);
+    }
+  };
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const handleSort = (order) => {
+    setSortOrder(order);
+    setCurrentPage(1);
+  };
+  const handleSearchInputChange = (e) => {
+    const value = e.target.value;
+    setSearchInput(value);
+    if (value.trim() === "") {
+      setSearchQuery("");
+      setCurrentPage(1);
+    }
+  };
 
   return (
     <div className="container mx-auto">
       <h1 className="text-2xl font-bold text-center mt-10">Blogs</h1>
       <div className="w-full my-2">
-        <input
-          type="text"
-          id="js-search-input"
-          className="w-full p-2 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-gray-500 shadow-lg transition duration-200 hover:bg-white/25 font-semibold select-none outline-none focus:border-blue-500"
-          placeholder="Search..."
-        />
+        <div className="flex gap-2">
+          <input
+            type="text"
+            id="js-search-input"
+            value={searchInput}
+            onChange={handleSearchInputChange}
+            onKeyDown={handleSearch}
+            className="w-full p-2 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-gray-500 shadow-lg transition duration-200 hover:bg-white/25 font-semibold select-none outline-none focus:border-blue-500"
+            placeholder="Search..."
+          />
+        </div>
         <button className="px-6 py-2 rounded-xl bg-blue-500/20 backdrop-blur-md border border-white/30 text-blue-500 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:bg-blue-500/25 active:scale-95 font-semibold select-none my-2">
           Thêm mới
         </button>
       </div>
 
       <div className="w-full flex items-center gap-4">
-        <button className="px-6 py-2 rounded-xl bg-yellow-500/20 backdrop-blur-md border border-white/30 text-yellow-500 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:bg-yellow-500/25 active:scale-95 font-semibold select-none">
+        <button
+          onClick={() => handleSort("newest")}
+          className={`px-6 py-2 rounded-xl backdrop-blur-md border shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:scale-95 font-semibold select-none ${
+            sortOrder === "newest"
+              ? "bg-gradient-to-r from-emerald-400/60 to-teal-400/60 border-emerald-400/70 text-white font-bold shadow-emerald-400/30"
+              : "bg-gradient-to-r from-emerald-400/20 to-teal-400/20 border-emerald-300/30 text-emerald-600 hover:from-emerald-400/30 hover:to-teal-400/30 hover:shadow-emerald-400/20"
+          }`}
+        >
           Mới nhất
         </button>
-        <button className="px-6 py-2 rounded-xl bg-gray-500/20 backdrop-blur-md border border-white/30 text-gray-500 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:bg-gray-500/25 active:scale-95 font-semibold select-none">
+        <button
+          onClick={() => handleSort("oldest")}
+          className={`px-6 py-2 rounded-xl backdrop-blur-md border shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:scale-95 font-semibold select-none ${
+            sortOrder === "oldest"
+              ? "bg-gradient-to-r from-amber-400/60 to-orange-400/60 border-amber-400/70 text-white font-bold shadow-amber-400/30"
+              : "bg-gradient-to-r from-amber-400/20 to-orange-400/20 border-amber-300/30 text-amber-600 hover:from-amber-400/30 hover:to-orange-400/30 hover:shadow-amber-400/20"
+          }`}
+        >
           Cũ nhất
         </button>
       </div>
@@ -158,7 +238,7 @@ export default function App() {
               </button>
             </div>
           ) : (
-            posts.slice(0, 10).map((post) => (
+            posts.map((post) => (
               <div
                 key={post.id}
                 className="px-6 py-2 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-blue-400 shadow-lg transition duration-200 hover:-translate-y-0.5 hover:bg-white/25 font-semibold p-4 gap-4 flex flex-col justify-between mb-1"
@@ -187,6 +267,56 @@ export default function App() {
             ))
           )}
         </div>
+        {!loading && !error && totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 mt-6 mb-4">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`px-4 py-2 rounded-xl backdrop-blur-md border shadow-lg transition duration-200 font-semibold select-none ${
+                currentPage === 1
+                  ? "bg-gray-300/20 border-gray-300/30 text-gray-400 cursor-not-allowed"
+                  : "bg-blue-500/20 border-white/30 text-blue-500 hover:-translate-y-0.5 hover:bg-blue-500/25 active:scale-95"
+              }`}
+            >
+              Trước
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1)
+              .filter(
+                (page) =>
+                  page === 1 ||
+                  page === totalPages ||
+                  (page >= currentPage - 1 && page <= currentPage + 1)
+              )
+              .map((page, index, array) => (
+                <React.Fragment key={page}>
+                  {index > 0 && array[index - 1] !== page - 1 && (
+                    <span className="px-2 text-gray-400">...</span>
+                  )}
+                  <button
+                    onClick={() => handlePageChange(page)}
+                    className={`px-4 py-2 rounded-xl backdrop-blur-md border shadow-lg transition duration-200 font-semibold select-none ${
+                      currentPage === page
+                        ? "bg-blue-500/40 border-blue-500/50 text-blue-600 font-bold"
+                        : "bg-white/20 border-white/30 text-blue-400 hover:-translate-y-0.5 hover:bg-white/25 active:scale-95"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                </React.Fragment>
+              ))}
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`px-4 py-2 rounded-xl backdrop-blur-md border shadow-lg transition duration-200 font-semibold select-none ${
+                currentPage === totalPages
+                  ? "bg-gray-300/20 border-gray-300/30 text-gray-400 cursor-not-allowed"
+                  : "bg-blue-500/20 border-white/30 text-blue-500 hover:-translate-y-0.5 hover:bg-blue-500/25 active:scale-95"
+              }`}
+            >
+              Sau
+            </button>
+          </div>
+        )}
       </div>
       {isModalOpen && (
         <div

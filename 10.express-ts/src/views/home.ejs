@@ -1,0 +1,21 @@
+<h1>Home Page</h1>
+<h2>
+    <%= title %>
+</h2>
+<p>
+    <%= content %>
+</p>
+
+<% if (isAuth) { %>
+    <h2>Đã đăng nhập</h2>
+    <% } else { %>
+        <h3>Chưa đăng nhập</h3>
+        <% } %>
+
+
+            <% for (const user of users) { %>
+                <li>
+                    <%= user.name %>
+                        <%= user.email %>
+                </li>
+                <% } %>

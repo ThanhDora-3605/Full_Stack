@@ -1,0 +1,34 @@
+<h1>Uploads</h1>
+<form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="file" id="fileInput" accept="image/*" required>
+    <div id="preview"></div>
+    <button type="submit">Upload</button>
+</form>
+<p id="result"></p>
+<script>
+    document.getElementById("fileInput").onchange = function () {
+        const preview = document.getElementById("preview");
+        preview.innerHTML = "";
+        const file = this.files[0];
+        if (file && file.type.startsWith("image/")) {
+            const img = document.createElement("img");
+            img.src = URL.createObjectURL(file);
+            img.style.maxWidth = "300px";
+            img.style.maxHeight = "200px";
+            img.style.marginTop = "8px";
+            preview.appendChild(img);
+        }
+    };
+    document.getElementById("uploadForm").onsubmit = async (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const res = await fetch("/uploads", { method: "POST", body: fd });
+        const data = await res.json();
+        const el = document.getElementById("result");
+        if (res.ok) {
+            el.innerHTML = `${data.message} <a href="${data.path}">Xem file</a>`;
+        } else {
+            el.textContent = data.error || "Upload failed";
+        }
+    };
+</script>

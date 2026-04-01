@@ -1,0 +1,16 @@
+<h1>Xin chào em anh F8</h1>
+<h2><%= title %></h2>
+<p><%= content %></p>
+<p><%- content %></p>
+<% if (isAuth) { %>
+    <h2>Đã đăng nhập</h2>
+<% } else { %>    
+<h3>Chưa đăng nhập</h3>    
+<% } %>
+<h2>Danh sách người dùng</h2>
+<% for (const user of users) { %>
+    <h3><%= user.name  %> | <%= user.email %></h3>
+<% } %>
+<script>
+    console.log('Cái này sẽ chạy ở client');
+</script>

@@ -1,0 +1,14 @@
+model User {
+    id          Int           @id @default(autoincrement())
+    email       String        @unique @db.VarChar(100)
+    name        String
+    phone       Phone?
+    password    String?
+    bio         String?       @db.Text
+    createdAt   DateTime?     @db.Timestamp()
+    updatedAt   DateTime?     @db.Timestamp()
+    posts       Post[]
+    userCourses UserCourses[]
+
+    @@map("users")
+}

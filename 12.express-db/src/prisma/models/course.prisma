@@ -1,0 +1,9 @@
+model Course {
+    id          Int           @id @default(autoincrement())
+    name        String
+    createdAt   DateTime?     @db.Timestamp()
+    updatedAt   DateTime?     @db.Timestamp()
+    userCourses UserCourses[]
+
+    @@map("courses")
+}

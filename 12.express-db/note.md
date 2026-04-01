@@ -62,14 +62,19 @@ Ví dụ: Lấy danh sách 10 users mua nhiều hàng nhất
 
 - Chịu trách nhiệm hiển thị dữ liệu cho client
 
+## Prisma
 
+Các công việc phải làm
 
-```bash
-// Cài đặt các package cần thiết
-npm i --save-dev @types/node typescript ts-node nodemon @types/express @eslint/js eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-```
+1. Thay đổi model
 
-```typescript
-// Tạo file tsconfig.json
-npx tsc --init  
-```
+2. Đồng bộ với Database
+
+- npx prisma db push
+- migrate (học sau)
+
+3. Generate client
+
+Mục đích: Hỗ trợ các hàm truy vấn tương ứng với model
+
+npx prisma generate

@@ -83,7 +83,7 @@
 
 
 -- Ví dụ lấy danh  sách các post...
-USE dora_db;
+# USE dora_db;
 
 # SELECT post.*, users.name AS username, users.email AS userEmail, phones.phone
 # FROM post
@@ -95,9 +95,61 @@ USE dora_db;
 
 
 -- Bài tập: lấy danh sách users của khoá học có tên chứa từ khoá "fullstack"
-SELECT DISTINCT users.*, phones.phone
-FROM users
-INNER JOIN users_coures ON users.id = users_coures.user_id
-INNER JOIN courses ON courses.id = users_coures.coures_id
-LEFT JOIN phones ON users.id = phones.user_id
-WHERE courses.name LIKE '%back-end%';
+# SELECT DISTINCT users.*, phones.phone
+# FROM users
+# INNER JOIN users_coures ON users.id = users_coures.user_id
+# INNER JOIN courses ON courses.id = users_coures.coures_id
+# LEFT JOIN phones ON users.id = phones.user_id
+# WHERE courses.name LIKE '%back-end%';
+
+
+-- Giả định tình huống
+-- tyoe: 0 - sản phẩm tưởng, 1 sản phẩm bán chạy
+-- yêu cầu mới: thêm loại "Hàng mới về" => bổ sung type = 2, Sắp xếp "Sản phẩm bán chạy lên đầu tiên -> hàng mới về -> sản phẩm thường"
+# USE dora_db;
+#
+# SELECT *,
+# (CASE
+#     WHEN type = 1 THEN 0
+#     WHEN type = 2 THEN 1
+#     ELSE 2
+# END) AS type_order
+# FROM products
+# ORDER BY type_order
+
+-- Tạo thêm cột mới "discount_rate" trong câu lệnh truy vấn theo điệu kiện sau
+-- nếu giá > 1000 => trả về giá trị "10%"
+-- nếu 500 < giá <= 1000 => trả về giá trị "5%"
+-- nếu giá <= 500 => trả về giá trị "0%"
+
+# SELECT *,
+# (CASE
+#     WHEN price > 1000 THEN '10%'
+#     WHEN price > 500 AND price <= 1000 THEN '5%'
+#     ELSE '0%'
+# END) AS discount_rate
+# FROM products;
+
+
+
+# SELECT users_coures.*, courses.*
+# FROM users_coures
+# JOIN courses ON courses.id = users_coures.coures_id
+# WHERE users_coures.user_id = 1
+# AND courses.price = (
+#     SELECT MAX(courses.price)
+#     FROM users_coures
+#     JOIN courses ON courses.id = users_coures.coures_id
+#     WHERE users_coures.user_id = 1
+# );
+
+USE dora_db;
+
+START TRANSACTION;
+UPDATE accouts SET balance = balance - 100000 WHERE email = 'user1@gmail.com';
+UPDATE accouts SET balance = balance + 100000 WHERE email = 'user2@gmail.com';
+-- commit --> thực thi
+-- rollback --> huỷ
+ROLLBACK;
+
+

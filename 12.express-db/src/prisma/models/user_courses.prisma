@@ -1,0 +1,12 @@
+model UserCourses {
+    id        Int       @id @default(autoincrement())
+    user      User      @relation(fields: [userId], references: [id])
+    course    Course    @relation(fields: [courseId], references: [id])
+    userId    Int
+    courseId  Int
+    status    Boolean   @default(true)
+    createdAt DateTime? @db.Timestamp()
+    updatedAt DateTime? @db.Timestamp()
+
+    @@map("users_courses")
+}

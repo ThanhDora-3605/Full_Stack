@@ -1,0 +1,31 @@
+<h1 class="mt-4">Thêm sản phẩm</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Thêm sản phẩm</li>
+</ol>
+<form method="post">
+  <div class="mb-3">
+    <label>Tên</label>
+    <input type="text" class="form-control" name="name" placeholder="Tên..." />
+  </div>
+  <div class="mb-3">
+    <label>Giá</label>
+    <input
+      type="number"
+      class="form-control"
+      name="price"
+      placeholder="Giá..."
+    />
+  </div>
+  <div class="mb-3">
+    <label>Mô tả</label>
+    <textarea
+      class="form-control"
+      name="description"
+      placeholder="Mô tả sản phẩm..."
+    ></textarea>
+  </div>
+  <div class="d-flex gap-2">
+    <button class="btn btn-primary">Lưu thay đổi</button>
+    <a href="/admin/products" class="btn btn-danger">Hủy</a>
+  </div>
+</form>

@@ -1,0 +1,10 @@
+model Phone {
+    id        Int       @id @default(autoincrement())
+    phone     String    @db.VarChar(15)
+    user      User      @relation(fields: [userId], references: [id]) //key truy cập
+    userId    Int       @unique //khóa ngoại
+    createdAt DateTime? @db.Timestamp()
+    updatedAt DateTime? @db.Timestamp()
+
+    @@map("phones")
+}
